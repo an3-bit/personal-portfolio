@@ -1,0 +1,111 @@
+/* Navbar wrapper */
+.n-wrapper {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff; /* Background color for navbar */
+  z-index: 1000; /* Ensures the navbar stays above other content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  padding: 0 1rem; /* Add some padding for spacing */
+}
+
+/* Left section */
+.n-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.n-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Right section */
+.n-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: 400;
+}
+
+/* List section */
+.n-list {
+  flex: 10;
+  display: flex;
+  gap: 2rem;
+}
+
+.n-list > ul {
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+  margin-right: 2rem;
+}
+
+.n-list > ul li:hover {
+  color: var(--orange); /* Highlight on hover */
+  cursor: pointer;
+}
+
+.n-button {
+  flex: 2;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .n-list > ul {
+    gap: 1rem; /* Reduce spacing for smaller screens */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon on smaller screens */
+  }
+
+  .n-list {
+    display: none; /* Hide navigation links by default on mobile */
+    position: absolute;
+    top: 10vh; /* Adjust based on navbar height */
+    right: 0;
+    width: 100%;
+    background-color: #fff; /* Same background as navbar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .n-list.active {
+    display: flex; /* Show the navigation links when active */
+  }
+
+  .n-list > ul {
+    flex-direction: column; /* Stack links vertically */
+    gap: 1rem;
+    margin-right: 0;
+  }
+
+  .n-list > ul li {
+    text-align: center; /* Center-align the links */
+  }
+}
+
+/* Section alignment for smooth scrolling */
+section {
+  scroll-margin-top: 10vh; /* Ensures sections align correctly below the navbar */
+  padding-top: 10vh; /* Optional: Adds padding to avoid content being too close to the navbar */
+}
